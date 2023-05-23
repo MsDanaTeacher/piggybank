@@ -1,2 +1,0 @@
-class WeeklySpendingsController < ApplicationController
-end
