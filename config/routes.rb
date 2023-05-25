@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :users, only: [:create]
       post '/login', to: 'auth#create'
-      get '/profile', to: 'users#profile'
+      # get '/profile', to: 'users#profile'
+      post '/auto_login', to: 'auth#auto_login'
+      get '/logged_in', to: 'application#logged_in?'
+
     end
   end
   get '*path',

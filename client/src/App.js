@@ -10,18 +10,19 @@ function App() {
   const [user, setUser] = useState({ username: "" })
 
   useEffect(() => {
-    let token = localStorage.getItem("token");
+    let token = localStorage.getItem("jwtToken");
     if(token && !user.username){
-    fetch("/api/v1/profile", {
+    fetch("/api/v1/auto_login", {
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
       },
     })
     .then((r) => r.json())
     .then((data) => {
-      if(data.user){
-        setUser(data.user);
-      }
+        setUser(data);
     });
   }
 }, []);
@@ -29,7 +30,7 @@ function App() {
   return (
     <Router>
         <Routes>
-          <Route path="/login" element={<Login setUser={setUser}/>}/>
+          <Route path="/login" element={<Login user={user} setUser={setUser}/>}/>
           <Route path="/signup" element={<Signup setUser={setUser}/>}/>
           <Route path="/home" element={<Home user={user} setUser={setUser}/>}/>
           <Route path="/" element={<Landing />}/>

@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login({ setUser }) {
+export default function Login({ user, setUser }) {
   const navigate = useNavigate();
 
   const loginData = {
@@ -10,7 +10,7 @@ export default function Login({ setUser }) {
     password: "",
   };
   const [login, setLogin] = useState({ ...loginData });
-
+  // const [data, setData] = useState({})
   function handleLoginChange(e) {
     setLogin({
       ...login,
@@ -29,14 +29,15 @@ export default function Login({ setUser }) {
     }).then((r) => {
       if (r.ok) {
         return r.json()
-        } else {
+        } 
+        else {
         throw new Error('Login unsuccessful')
       }
     })
     .then((data) => {
         setUser(data.user);
-        localStorage.setItem('token', data.token);
-        // console.log(data.user, data.token, 'user and token')
+        console.log('user set', user)
+        localStorage.setItem('jwtToken', data.jwt);
         navigate("/home");
     })
     .catch((error) => {

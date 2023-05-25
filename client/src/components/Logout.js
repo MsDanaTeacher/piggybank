@@ -7,7 +7,7 @@ export default function Logout({ setUser }) {
 
     function handleLogoutClick(){
         setUser({username: ""});
-        localStorage.removeItem("token");
+        localStorage.removeItem("jwtToken");
         navigate("/login")
     }
 
