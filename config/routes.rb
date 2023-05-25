@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
     end
   end
+  resources :weekly_spendings, only: [:create, :update]
+  resources :items, only: [:create]
   get '*path',
       to: 'fallback#index',
       constraints: ->(req) { !req.xhr? && req.format.html? }

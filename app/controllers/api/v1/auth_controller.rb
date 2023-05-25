@@ -25,8 +25,9 @@ class Api::V1::AuthController < ApplicationController
                 begin
                 decoded_token = JWT.decode(token, 'my_s3cr3t', true, algorithm: 'HS256')
                 user_id = decoded_token[0]['user_id']
-                user = User.find(user_id)
-                render json: user
+                #By storing the user object in the @user instance variable, it can be accessed within other methods of the controller.
+                @user = User.find(user_id)
+                render json: @user
                 rescue JWT::DecodeError
                 render json: { error: 'Invalid token' }, status: :unauthorized
                 end
