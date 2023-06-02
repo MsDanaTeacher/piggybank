@@ -1,4 +1,9 @@
 class WeeklySpendingsController < ApplicationController
+    def show
+        spending = WeeklySpending.find(params[:id])
+        render json: spending
+    end
+
     def create
         weekly_spending = WeeklySpending.create!(user_id: @user.id, budget: params[:budget], date: params[:date])
         render json: weekly_spending, status: :created
