@@ -5,7 +5,7 @@ class WeeklySpendingsController < ApplicationController
     end
 
     def create
-        weekly_spending = WeeklySpending.create!(user_id: @user.id, budget: params[:budget], date: params[:date])
+        weekly_spending = WeeklySpending.create!(user_id: @user.id, budget: params[:budget], date: params[:date], saved: params[:budget])
         render json: weekly_spending, status: :created
     end
 

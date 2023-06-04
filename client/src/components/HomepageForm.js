@@ -62,7 +62,8 @@ const navigate = useNavigate()
         },
         body: JSON.stringify({
             budget: formData.budget,
-            date: dateRangeString
+            date: dateRangeString,
+            saved: formData.budget
         }),
       })
         .then((r) => {

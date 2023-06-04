@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 export default function SpendingTracker({ user }) {
   const { id, budget, date } = useParams();
+  console.log(budget, 'budget')
   const formBody = {
     item: "",
     cost: "",
@@ -12,7 +13,7 @@ export default function SpendingTracker({ user }) {
   const [formData, setFormData] = useState({ ...formBody });
   const [wantsTotal, setWantsTotal] = useState(0);
   const [needsTotal, setNeedsTotal] = useState(0);
-  const [savedTotal, setSavedTotal] = useState(parseFloat(budget));
+  const [savedTotal, setSavedTotal] = useState(budget);
   const [items, setItems] = useState([])
 
   function handleSpendingChange(e) {
@@ -20,7 +21,6 @@ export default function SpendingTracker({ user }) {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    // console.log(formData);
   }
 
   function handleSpendingSubmit(e) {
@@ -43,12 +43,6 @@ export default function SpendingTracker({ user }) {
       })
         .then((r) => r.json())
         .then((data) => {
-          // setSavedTotal(savedTotal => savedTotal - parseInt(data.cost))
-          // if(data.need){
-          //     setNeedsTotal(needsTotal => needsTotal + parseInt(data.cost))
-          // } else {
-          //     setWantsTotal(wantsTotal => wantsTotal + parseInt(data.cost))
-          // }
           handleSpendingUpdates(data);
         });
         setFormData({...formBody})
@@ -57,10 +51,7 @@ export default function SpendingTracker({ user }) {
 
   function handleSpendingUpdates(data) {
     console.log(data, "data sent to callback");
-    let saved = savedTotal - data.cost;
-    // if(saved < 0){
-    //     alert('Uh oh, you went over budget!')
-    // }
+    let saved = (parseInt(savedTotal) - parseInt(data.cost));
     let need = needsTotal;
     let want = wantsTotal;
     if (data.need) {
@@ -83,23 +74,9 @@ export default function SpendingTracker({ user }) {
           saved: saved,
         }),
       }).then((r) => r.json());
-      setSavedTotal((savedTotal) => saved);
-    // //   localStorage.setItem("savedTotal", saved)
-    //   if (data.need) {
-        setNeedsTotal((needsTotal) => need);
-    //     // localStorage.setItem("needsTotal", need)
-    //   } else {
-        setWantsTotal((wantsTotal) => want);
-    //     // localStorage.setItem("wantsTotal", want)
-    //   }
-    //   console.log(wantsTotal, needsTotal, savedTotal, "wants, needs, saved");
-      
-      // setSavedTotal(savedTotal => savedTotal - parseInt(data.cost))
-      //         if(data.need){
-      //             setNeedsTotal(needsTotal + parseInt(data.cost))
-      //         } else {
-      //             setWantsTotal(wantsTotal + parseInt(data.cost))
-      //         }
+      setSavedTotal(saved);
+        setNeedsTotal(need);
+        setWantsTotal(want);
     }
   }
   useEffect(() => {
@@ -114,9 +91,18 @@ export default function SpendingTracker({ user }) {
         .then(r => r.json())
         .then(data => {
             console.log(data, 'updated info')
-            setSavedTotal(data.saved)
+            // setSavedTotal(data.saved)
+            if(data.want_total === null){
+                setWantsTotal(0)
+            } else {
             setWantsTotal(data.want_total)
+            }
+            if(data.need_total === null){
+                setNeedsTotal(0)
+            } else{
             setNeedsTotal(data.need_total)
+            }
+            setSavedTotal(data.saved)
         })
     }
   }, []);
@@ -143,9 +129,12 @@ export default function SpendingTracker({ user }) {
     <p>{el.need === true ? "need" : "want"}</p>
     </div>
   ))
+  let color; 
+  savedTotal < 0 ? color = "red" : color = "black"
+
   return (
     <>
-      <h1 style={{color: {savedTotal} < 0 ? "black" : "red"}}>Budget: ${budget}</h1>
+      <h1 style={{color: `${color}`}}>Budget: ${budget}</h1>
       <h1>Dates: {date}</h1>
       <form onSubmit={(e) => handleSpendingSubmit(e)}>
         <p>need item name, cost, need</p>
@@ -180,7 +169,7 @@ export default function SpendingTracker({ user }) {
       </form>
       <p>Wants Total: ${wantsTotal}</p>
       <p>Needs Total: ${needsTotal}</p>
-      <p>Saved: ${savedTotal}</p>
+      <p style={{color: `${color}`}}>Saved: ${savedTotal}</p>
 
       <div>
         {allItems}
