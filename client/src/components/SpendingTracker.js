@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import PieChart from "./PieChart";
 
 export default function SpendingTracker({ user }) {
   const { id, budget, date } = useParams();
@@ -174,10 +175,8 @@ export default function SpendingTracker({ user }) {
       <div>
         {allItems}
       </div>
+      <PieChart wantsTotal={wantsTotal} needsTotal={needsTotal} savedTotal={savedTotal} id={id}/>
     </>
   );
 }
 
-// To dos:
-// Update wants total, needs total, saved total using a patch request for the weekly spending instance. then, update it on the
-// front end to reflect this, I think its either useffect or usestate to reflect the change
