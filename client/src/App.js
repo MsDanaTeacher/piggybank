@@ -7,6 +7,7 @@ import Landing from './components/Landing';
 import Home from './components/Home';
 import SpendingTracker from './components/SpendingTracker';
 import Summary from './components/Summary';
+import SummaryDetails from './components/SummaryDetails';
 
 function App() {
   const [user, setUser] = useState({ username: "" })
@@ -37,6 +38,7 @@ function App() {
           <Route path="/home" element={<Home user={user} setUser={setUser}/>}/>
           <Route path="/spendingtracker/:id/:budget/:date" element={<SpendingTracker user={user}/>}/>
           <Route path="/summary" element={<Summary user={user}/>} />
+          <Route path="/summarydetails/:id" element={<SummaryDetails />} />
           <Route path="/" element={<Landing />}/>
         </Routes>
     </Router>
