@@ -1,4 +1,9 @@
 class WeeklySpendingsController < ApplicationController
+    def index
+        all_spendings = WeeklySpending.where(user_id: @user.id)
+        render json: all_spendings
+    end
+
     def show
         spending = WeeklySpending.find(params[:id])
         render json: spending

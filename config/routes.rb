@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
     end
   end
-  resources :weekly_spendings, only: [:show, :create, :update]
+  resources :weekly_spendings, only: [:index, :show, :create, :update]
   resources :items, only: [:index, :create, :destroy]
   get '*path',
       to: 'fallback#index',

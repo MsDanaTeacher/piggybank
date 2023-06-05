@@ -40,7 +40,6 @@ export default function Login({ user, setUser }) {
     })
     .then((data) => {
         setUser(data.user);
-        console.log('user set', user)
         localStorage.setItem('jwtToken', data.jwt);
         navigate("/home");
     })
