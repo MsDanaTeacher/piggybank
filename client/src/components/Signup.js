@@ -11,6 +11,10 @@ export default function Signup({setUser}) {
 
   const [signup, setSignup] = useState({ ...signupData });
 
+  function handleLogInClick(){
+    navigate("/login")
+  }
+  
   function handleSignUpChange(e) {
     setSignup({
       ...signup,
@@ -47,6 +51,7 @@ export default function Signup({setUser}) {
         <input type="text" name="password" value={signup.password} />
         <button>Sign Up</button>
       </form>
+      <p>Have an account? <button onClick={handleLogInClick}>Log in!</button></p>
     </>
   );
 }

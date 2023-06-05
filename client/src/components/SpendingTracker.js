@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import PieChart from "./PieChart";
 
 export default function SpendingTracker({ user }) {
   const { id, budget, date } = useParams();
-  console.log(budget, 'budget')
+  const navigate = useNavigate()
   const formBody = {
     item: "",
     cost: "",
@@ -17,6 +17,9 @@ export default function SpendingTracker({ user }) {
   const [savedTotal, setSavedTotal] = useState(budget);
   const [items, setItems] = useState([])
 
+  function handleBackClick(){
+    navigate("/home")
+  }
   function handleSpendingChange(e) {
     setFormData({
       ...formData,
@@ -135,6 +138,7 @@ export default function SpendingTracker({ user }) {
 
   return (
     <>
+    <button onClick={handleBackClick}>back</button>
       <h1 style={{color: `${color}`}}>Budget: ${budget}</h1>
       <h1>Dates: {date}</h1>
       <form onSubmit={(e) => handleSpendingSubmit(e)}>

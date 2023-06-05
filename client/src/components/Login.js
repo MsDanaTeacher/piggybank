@@ -18,6 +18,10 @@ export default function Login({ user, setUser }) {
     });
   }
 
+  function handleSignUpClick(){
+    navigate("/signup")
+  }
+  
   function handleLoginSubmit(e) {
     e.preventDefault();
     fetch("/api/v1/login", {
@@ -57,6 +61,7 @@ export default function Login({ user, setUser }) {
         <input type="password" name="password" value={login.password} />
         <button>Login</button>
       </form>
+      <p>Don't have an account? <button onClick={handleSignUpClick}>Sign Up!</button></p>
     </>
   );
 }
