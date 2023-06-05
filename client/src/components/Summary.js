@@ -28,11 +28,25 @@ export default function Summary({ user }) {
         }
     }, [])
 
+    function handleDelete(el){
+        const token = localStorage.getItem("jwtToken")
+        fetch(`weekly_spendings/${el.id}`, {
+            method: "DELETE",
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        })
+        .then(() => {
+            setSummaryData((summaryData) => summaryData.filter((s) => s.id !== el.id))
+        })
+    }
+
     const allSpendings = summaryData.map((el) => (
-        <SpendingTile el={el} user={user}/>
+        <SpendingTile el={el} user={user} handleDelete={handleDelete}/>
     ))
 
 
+    
   return (
     <>
     <button onClick={handleHomeClick}>back to home</button>

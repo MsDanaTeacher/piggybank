@@ -19,4 +19,9 @@ class WeeklySpendingsController < ApplicationController
         weekly_spending_update.update!(want_total: params[:want_total], need_total: params[:need_total], saved: params[:saved])
         render json: weekly_spending_update
     end
+
+    def destroy
+        spending_to_delete = WeeklySpending.find(params[:id])
+        spending_to_delete.destroy!
+    end
 end

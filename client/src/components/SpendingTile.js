@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function SpendingTile({ el, user }) {
+export default function SpendingTile({ el, user, handleDelete }) {
     const navigate = useNavigate()
 
     function handleDetailsClick(){
@@ -9,7 +9,9 @@ export default function SpendingTile({ el, user }) {
             navigate(`/summarydetails/${el.id}`)
             }
         }
-    
+    function handleDeleteClick(){
+        handleDelete(el)
+    }
   return (
     <div key={el.id} style={{border: "2px solid blue"}}>
             <p>{el.date}</p>
@@ -18,6 +20,7 @@ export default function SpendingTile({ el, user }) {
             <p>Needs Total: ${el.need_total === null? 0 : el.need_total}</p>
             <p>Saved Total: ${el.saved}</p>
             <button onClick={handleDetailsClick}>See more details</button>
+            <button onClick={handleDeleteClick}>Delete Spending Summary</button>
         </div>
   )
 }
