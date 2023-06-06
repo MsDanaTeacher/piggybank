@@ -22,12 +22,18 @@ export default function Summary({ user }) {
             })
             .then(r => r.json())
             .then(data => {
-                setSummaryData(data)
-                console.log(data)
+                const sortedData = data.sort((a, b) => {
+                    const dateA = new Date(a.date.split(' - ')[0]);
+                    const dateB = new Date(b.date.split(' - ')[0]);
+                    return dateA - dateB;
+                  });
+                  setSummaryData(sortedData);
             })
         }
     }, [])
 
+
+    console.log(summaryData, 'sorted')
     function handleDelete(el){
         const token = localStorage.getItem("jwtToken")
         fetch(`weekly_spendings/${el.id}`, {
