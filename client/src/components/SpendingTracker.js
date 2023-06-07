@@ -2,8 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import PieChart from "./PieChart";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export default function SpendingTracker({ user }) {
   const { id, budget, date } = useParams();
@@ -18,7 +16,6 @@ export default function SpendingTracker({ user }) {
   const [needsTotal, setNeedsTotal] = useState(0);
   const [savedTotal, setSavedTotal] = useState(budget);
   const [items, setItems] = useState([])
-  const [rating, setRating] = useState(0)
 
   function handleBackClick(){
     navigate("/home")
@@ -139,22 +136,6 @@ export default function SpendingTracker({ user }) {
   let color; 
   savedTotal < 0 ? color = "red" : color = "black"
 
-  function handleRatingChange(val){
-    setRating(val)
-    saveRating(val)
-  }
-
-  function saveRating(val){
-    fetch('/items', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ rating: val }),
-    })
-    .then(r => r.json())
-    .then(data => console.log(data))
-  }
   return (
     <>
     <button onClick={handleBackClick}>back</button>
@@ -193,14 +174,6 @@ export default function SpendingTracker({ user }) {
       <p>Wants Total: ${wantsTotal}</p>
       <p>Needs Total: ${needsTotal}</p>
       <p style={{color: `${color}`}}>Saved: ${savedTotal}</p>
-      <div>
-        <label>How did I do this week?</label>
-        {[1,2,3,4,5].map((val) => (
-          
-            <FontAwesomeIcon key={val} icon={faStar} color={rating >= val ? 'gold' : 'gray'} onChange={() => handleRatingChange(val)} style={{ cursor: 'pointer' }}/>
-         
-        ))}
-      </div>
       <div>
         {allItems}
       </div>
