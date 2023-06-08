@@ -1,4 +1,4 @@
-import './App.css';
+import './Landing.css';
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
