@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,23 @@
   to {
     transform: rotate(360deg);
   }
+} */
+html, body {
+  height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+.landing-page-main-div {
+  height: 100vh;
+  background-image: url("../public/images/pigbackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.landing-page-main-div h1 {
+  margin: 0;
 }
