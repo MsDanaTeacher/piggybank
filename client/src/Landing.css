@@ -1,10 +1,46 @@
-html, body {
-  height: 100vh;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500;700&display=swap");
+html,
+body {
+  height: 100%;
+  margin: 0;
+  /* overflow: hidden; */
+  overflow-y: hidden;
+  overflow: scroll;
 }
 
 body {
   margin: 0;
   padding: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em 6em;
+}
+nav p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 36px;
+  color: white;
+  font-weight: 500;
+  margin: 0;
+}
+nav button {
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+  margin: 0;
+}
+
+nav button:hover {
+  color: black;
 }
 .landing-page-main-div {
   height: 100vh;
@@ -14,10 +50,49 @@ body {
   background-position: center;
 }
 
+.landing-page-main-div div div {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 36px;
+  color: white;
+  font-weight: 700;
+  width: 40vw;
+  padding-left: 2.5em;
+  margin-top: 3.5em;
+}
+.landing-page-main-div div div h2 {
+  margin-bottom: 0;
+}
+.landing-page-main-div div div h2 p {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 26px;
+  color: white;
+  font-weight: 300;
+  width: 40vw;
+}
+.landing-page-main-div div div button {
+  border: none;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 20px;
+  color: white;
+  font-weight: 300;
+  background-color: transparent;
+}
+
+.landing-page-main-div div div button:hover {
+  color: black;
+}
+
+.landing-page-main-div div div img {
+  width: 85px;
+  margin-bottom: 60px;
+}
 .landing-page-main-div h1 {
   margin: 0;
 }
 
+.landing-w-parent-div {
+  margin-top: 6em;
+}
 .landing-page-who-where-when-div {
   display: flex;
   justify-content: center;
@@ -25,13 +100,33 @@ body {
   align-items: center;
   position: relative;
   z-index: 2;
+  font-family: "Ubuntu", sans-serif;
 }
 .landing-page-who-where-when-div img {
-  width: 30vw;
+  height: 35vh;
   border-radius: 25px;
 }
 .landing-page-who-where-when-div p {
-  width: 30vw;
+  height: 35vh;
+  max-width: 35vw;
+}
+
+.landing-page-who-where-when-div h2 {
+  color: #f8d286;
+  margin-bottom: 0.3em;
+  font-size: 28px;
+}
+
+.landing-page-who-where-when-div h5 {
+  color: black;
+  font-size: 18px;
+  margin-top: 0;
+}
+
+.landing-page-who-where-when-div p {
+  font-weight: 300;
+  font-size: 15px;
+  color: rgb(55, 55, 55);
 }
 
 .squiggle-div {
@@ -57,27 +152,51 @@ body {
   position: relative;
 } */
 
-
-
 .landing-signup-div {
   position: relative;
+  margin-top: 6em;
+  margin-bottom: 6em;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  text-align: center;
 }
 
-.landing-signup-div h2{
+.landing-signup-div h2 {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 400%);
+  transform: translate(-50%, 100%);
   z-index: 1;
-} 
+}
+
+.landing-signup-div button {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 500%);
+  z-index: 1;
+  background-color: transparent;
+  border: 1px solid white;
+  border-radius: 25px;
+  color: white;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  width: 100px;
+  height: 40px;
+}
+
+.landing-signup-div button:hover {
+  color: black;
+}
 
 .landing-signup-div img {
   width: 60vw;
   height: 50vh;
   border-radius: 25px;
   position: relative;
-  left: 50%;
+  left: 30%;
   transform: translateX(-50%);
-} 
+}
 
 footer {
   background-color: black;
@@ -88,8 +207,16 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
+footer p {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+}
 a {
   text-decoration: none;
   color: white;
+}
+
+a:hover {
+  color: #fed6dc;
 }

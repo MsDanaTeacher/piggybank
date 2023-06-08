@@ -8,13 +8,14 @@ export default function Landing() {
     <>
       <div className="landing-page-main-div">
         <nav>
-          <h1>PiggyBank</h1>
+          <p>PiggyBank</p>
           <button onClick={() => navigate("/login")}>Log In</button>
         </nav>
         <div>
           <div>
-            <h2>Financial literacy is important. Spend. Save. Learn.</h2>
-            <button onClick={() => navigate("/signup")}>Sign Up</button>
+            <h2>Financial literacy is important. <p>Spend. Save. Learn.</p></h2>
+            <button onClick={() => navigate("/signup")}>Sign Up</button><br />
+            <img src="/images/blacksquiggly.png"/>
           </div>
         </div>
       </div>
@@ -54,8 +55,8 @@ export default function Landing() {
               The conversation got me thinking;
               <br />
               How do we ensure that all children have the opportunity to gain
-              valuable skills in financial literacy? How can we make access to
-              education available for children who don't go to, or don't want to
+              valuable skills in financial literacy?<br />How can we make access to
+              financial education available for children who don't go to, or don't want to
               go to finance camp?
               <br />
               Introducing PiggyBank, an app for children to use to track their
@@ -74,13 +75,14 @@ export default function Landing() {
       </div>
 
       <div className="landing-signup-div">
-        <h2>Sign up and start saving today!</h2>
+        <h2>Sign up<br />and start saving today!</h2><br />
+        <button onClick={() => navigate("/signup")}>Sign Up</button>
         <img src="/images/pinksignupblob.png" />
       </div>
 
       <div>
       <footer>
-        <p>Hey, you! Like what you see? Check out my other projects <a href="https://danalobell.dev/" target="_blank">here!</a></p>
+        <p>Hey, you! Like what you see? Check out my other projects <a href="https://danalobell.dev/" target="_blank">here</a>!</p>
       </footer>
       </div>
     </>
