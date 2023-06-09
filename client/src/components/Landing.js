@@ -25,9 +25,11 @@ export default function Landing() {
           <div>
             <img src="/images/greendollar.jpg" />
           </div>
+          <img src="/images/blackedge.png" id="zigzag"/>
           <div>
             <h2>Who, When, Where</h2>
-            <h5>The Inspiration</h5>
+            {/* <img src="/images/blacksquiggly.png"/> */}
+            {/* <h5>The Inspiration</h5> */}
             <p>
               Hi, I'm Dana Lobell and I'm a full stack software engineer based
               in NYC. Last summer on my way to coding bootcamp, I overheard a
@@ -50,7 +52,7 @@ export default function Landing() {
         <div className="landing-page-who-where-when-div">
           <div>
             <h2>Why, What</h2>
-            <h5>The Idea</h5>
+            {/* <h5>The Idea</h5> */}
             <p>
               The conversation got me thinking;
               <br />
@@ -68,6 +70,7 @@ export default function Landing() {
               without being overwhelming to young children.
             </p>
           </div>
+          <img src="/images/zigzag2.png" id="zigzag2"/>
           <div>
             <img src="/images/bank.jpg" />
           </div>

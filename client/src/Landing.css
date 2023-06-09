@@ -106,6 +106,20 @@ nav button:hover {
   height: 35vh;
   border-radius: 25px;
 }
+#zigzag {
+  position: absolute;
+  top: -23px;
+  left: 49vw;
+  width: 84px;
+  height: auto;
+}
+#zigzag2 {
+  position: absolute;
+    top: 264px;
+    left: 42vw;
+    width: 84px;
+    height: auto;
+}
 .landing-page-who-where-when-div p {
   height: 35vh;
   max-width: 35vw;
@@ -126,7 +140,7 @@ nav button:hover {
 .landing-page-who-where-when-div p {
   font-weight: 300;
   font-size: 15px;
-  color: rgb(55, 55, 55);
+  color: rgb(87, 87, 87);
 }
 
 .squiggle-div {
