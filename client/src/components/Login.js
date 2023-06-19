@@ -50,17 +50,25 @@ export default function Login({ user, setUser }) {
 
   return (
     <>
-      <form
+    <div className="landing-page-main-div">
+        <nav>
+          <p>PiggyBank</p>
+          <button onClick={() => navigate("/")}>Home</button>
+        </nav>
+        <div class="form-div">
+        <p>Don't have an account? <br/><button onClick={handleSignUpClick} class="form-signup-button">Sign Up!</button></p><br />
+        <h2>Log in</h2>
+        <form
         onChange={(e) => handleLoginChange(e)}
         onSubmit={(e) => handleLoginSubmit(e)}
       >
-        <label>Username:</label>
-        <input type="text" name="username" value={login.username} />
-        <label>Password:</label>
-        <input type="password" name="password" value={login.password} />
-        <button>Login</button>
+        <label>Username</label><br />
+        <input type="text" name="username" value={login.username} /><br />
+        <label>Password</label><br />
+        <input type="password" name="password" value={login.password} /><br/>
+        <button class="form-login-button">Login</button>
       </form>
-      <p>Don't have an account? <button onClick={handleSignUpClick}>Sign Up!</button></p>
+      </div></div>
     </>
   );
 }

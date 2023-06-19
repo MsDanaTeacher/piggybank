@@ -1,0 +1,90 @@
+@import "nav.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.form-div {
+    background-color: white;
+    opacity: .8;
+    width: 27vw;
+    height: 60vh;
+    border-radius: 25px;
+    -webkit-box-shadow: 16px 44px 35px -22px rgba(0,0,0,0.26);
+-moz-box-shadow: 16px 44px 35px -22px rgba(0,0,0,0.26);
+box-shadow: 16px 44px 35px -22px rgba(0,0,0,0.26);
+margin-top: 6%;
+margin-left: 6em;
+padding-top: 2%;
+}
+.landing-page-main-div form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+.form-div h2 {
+font-family: "Ubuntu", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  margin-left: 1.5em;
+  margin-bottom: 0.7em;
+}
+
+.form-div label {
+    margin-bottom: .5em;
+    margin-right: 8em;
+    color: rgb(93, 92, 92);
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+
+.form-div form input {
+    width: 100%;
+    margin-bottom: 1em;
+    padding: .7em;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(255, 155, 155);
+    opacity: 1;
+}
+
+.form-div p {
+    color: rgb(93, 92, 92);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    float: right;
+    margin-top: 0;
+    padding-right: 15%;
+    color: rgb(84, 84, 255);
+    font-weight: 500;
+}
+
+.form-signup-button {
+    float: right;
+    border: none;
+    color: rgb(84, 84, 255);
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.form-signup-button:hover {
+    color: black;
+}
+
+.form-login-button {
+    background-color: black;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    padding: .7em;
+    width: 150px;
+    margin-right: 10em;
+}
+.form-login-button:hover {
+    color: rgb(255, 155, 155);
+}
