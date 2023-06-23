@@ -63,7 +63,7 @@ export default function Login({ user, setUser }) {
         onSubmit={(e) => handleLoginSubmit(e)}
       >
         <label>Username</label><br />
-        <input type="text" name="username" value={login.username} /><br />
+        <input type="text" name="username" value={login.username}/><br />
         <label>Password</label><br />
         <input type="password" name="password" value={login.password} /><br/>
         <button class="form-login-button">Login</button>

@@ -42,16 +42,25 @@ export default function Signup({setUser}) {
         })
         .catch(err => alert(err))
   }
+
   return (
-    <>
+   <>
+     <div className="landing-page-main-div">
+        <nav>
+          <p>PiggyBank</p>
+          <button onClick={() => navigate("/")}>Home</button>
+        </nav>
+        <div class="form-div">
+        <p>Have an account? <br/><button onClick={handleLogInClick} class="form-signup-button">Log in!</button></p><br />
+        <h2>Sign up</h2>
       <form onChange={(e) => handleSignUpChange(e)} onSubmit={(e) => handleSignUpSubmit(e)}>
         <label>Username:</label>
         <input type="text" name="username" value={signup.username} />
         <label>Password:</label>
         <input type="text" name="password" value={signup.password} />
-        <button>Sign Up</button>
+        <button class="form-login-button">Sign Up</button>
       </form>
-      <p>Have an account? <button onClick={handleLogInClick}>Log in!</button></p>
-    </>
+      </div></div>
+      </>
   );
 }
