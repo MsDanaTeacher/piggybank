@@ -12,6 +12,6 @@ export default function Logout({ setUser }) {
     }
 
   return (
-    <button onClick={handleLogoutClick}>Log Out</button>
+    <button onClick={handleLogoutClick} id="log-out-button">Log Out</button>
   )
 }

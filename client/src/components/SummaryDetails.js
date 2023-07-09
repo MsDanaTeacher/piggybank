@@ -73,7 +73,7 @@ export default function SummaryDetails() {
     </div>
   ));
   function handleBackToSummaries() {
-    navigate("/summary");
+    navigate("/home");
   }
 
   const savedSummary =

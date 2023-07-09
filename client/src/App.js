@@ -1,5 +1,6 @@
 import './Landing.css';
 import './LoginSignup.css'
+import './Home.css'
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';
@@ -38,7 +39,7 @@ function App() {
           <Route path="/signup" element={<Signup setUser={setUser}/>}/>
           <Route path="/home" element={<Home user={user} setUser={setUser}/>}/>
           <Route path="/spendingtracker/:id/:budget/:date" element={<SpendingTracker user={user}/>}/>
-          <Route path="/summary" element={<Summary user={user}/>} />
+          {/* <Route path="/summary" element={<Summary user={user}/>} /> */}
           <Route path="/summarydetails/:id" element={<SummaryDetails />} />
           <Route path="/" element={<Landing />}/>
         </Routes>

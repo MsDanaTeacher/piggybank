@@ -84,24 +84,30 @@ const navigate = useNavigate()
     }
   }
   return (
+    // <div className="homepage-form-div">
     <form
       onChange={(e) => handleBudgetChange(e)}
       onSubmit={(e) => handleFormSubmit(e)}
+      className="homepage-form"
     >
-      <label>Budget:</label>
-      <div>
-        $<input type="number" name="budget" value={formData.budget} />
+      {/* <label>Budget:</label> */}
+      <div><label>Budget: </label>
+        $ <input type="number" name="budget" value={formData.budget} id="budget"/>
       </div>
-      <label>Date Range:</label>
-      <DatePicker
+      {/* <label>Dates</label> */}
+      <div style={{marginTop: "2%", marginBottom: "4%"}}>From:<DatePicker
         selected={dateRange[0]}
         onChange={(date) => handleDateChange(date, 0)}
-      />
+        
+      /></div>
+      <div>To: 
       <DatePicker
         selected={dateRange[1]}
         onChange={(date) => handleDateChange(date, 1)}
       />
-      <button type="submit">Submit</button>
+      </div>
+      <button type="submit" id="budget-submit">Submit</button>
     </form>
+    // </div>
   );
 }

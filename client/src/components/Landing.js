@@ -25,7 +25,6 @@ export default function Landing() {
           <div>
             <img src="/images/greendollar.jpg" />
           </div>
-          <img src="/images/blackedge.png" id="zigzag"/>
           <div>
             <h2>Who, When, Where</h2>
             {/* <img src="/images/blacksquiggly.png"/> */}
@@ -70,7 +69,6 @@ export default function Landing() {
               without being overwhelming to young children.
             </p>
           </div>
-          <img src="/images/zigzag2.png" id="zigzag2"/>
           <div>
             <img src="/images/bank.jpg" />
           </div>

@@ -1,0 +1,174 @@
+.user-home{
+    background-color:#f1f1f1;
+    min-height: 100vh;
+    overflow: scroll;
+    width: 100vw;
+    /* border: 2px solid red; */
+    padding-bottom: 20px;
+}
+
+.user-home div h1 {
+    margin-left: 10vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(140, 0, 168);
+    font-size: 25px;
+}
+.user-home-nav {
+    width: 80vw;
+    padding-bottom: 0;
+    margin: auto;
+}
+.user-home-nav p{
+    color: rgb(57, 57, 57);
+}
+#log-out-button {
+    margin-bottom: 1em;
+    color: rgb(57, 57, 57);
+}
+.user-home-form {
+    background-color: white;
+    width: 20vw;
+    border-radius: 25px;
+    height: auto;
+}
+
+.form-summary-components {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    /* border: 2px solid blue; */
+    height: auto;
+}
+
+.summary-component {
+    background-color: white;
+    width: 55vw;
+    border-radius: 25px;
+    max-height: 50vh;
+    /* border: 2px solid purple; */
+}
+
+.all-spendings-div {
+    background-color: white;
+    width: 80vw;
+    border-radius: 25px;
+    height: auto;
+    padding: 3%;
+    margin-top: 4%;
+    margin-bottom: 20px; 
+    /* border: 2px solid blue; */
+}
+
+.all-spendings-div h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(140, 0, 168);
+    font-size: 25px;
+    /* padding-left: 3%;
+    padding-top: 5%; */
+}
+
+.each-previous-spending {
+    border-top: 2px solid rgb(217, 217, 217);
+    margin-top: 2%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(139, 139, 139);
+}
+.date {
+    color: rgb(57, 57, 57);
+    font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.summary-buttons {
+    background-color: transparent;
+    border: none;
+    color: rgb(57, 57, 57);
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    margin-right: 2%;
+    padding: 1%;
+}
+.user-homepage-container {
+    display: flex;
+    align-items: center;
+    /* border: 2px solid pink; */
+    padding: 5%;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    
+
+}
+
+.user-homepage-container h2{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(57, 57, 57);
+    font-size: 20px;
+    margin-top: 0;
+}
+
+.summary-divs {
+    margin-top: 10%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: rgb(139, 139, 139);
+    font-size: 90%;
+    display: flex;
+}
+
+#empty-div {
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid rgb(217, 217, 217);
+    width: 90%;
+}
+
+
+/* HomePage Form */
+.homepage-form {
+  width: 100%;
+  padding-left: 20%;
+  padding-top: 35%;
+  font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(57, 57, 57);
+    font-size: 16px;
+}
+#budget {
+    border: none;
+    border-bottom: 2px solid rgb(217, 217, 217);
+    outline: none;
+    width: 26%;
+    margin-bottom: 5%;
+}
+.react-datepicker__input-container input {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid rgb(217, 217, 217);
+    /* margin-top: 5%; */
+    background-color: transparent;
+    width: 60%;
+  }
+#input-div {
+    margin-top: 5%;
+}
+#budget-submit {
+    margin-top: 5%;
+    background-color: transparent;
+    border: none;
+    color: rgb(57, 57, 57);
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 2% 4%;
+}
+
