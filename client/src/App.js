@@ -1,6 +1,7 @@
 import './Landing.css';
 import './LoginSignup.css'
 import './Home.css'
+import './Summary.css'
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './components/Login';

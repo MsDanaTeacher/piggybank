@@ -1,0 +1,70 @@
+@import "fonts.css";
+.summary-details-page {
+    background-color:#f1f1f1;
+    height: 100vh;
+    overflow: scroll;
+}
+.dates-and-doughnut {
+    /* border: 2px solid blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(57, 57, 57);
+}
+
+.dates-and-doughnut p:first-of-type{
+    /* border: 2px solid blue; */
+    width: 60vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: rgb(57, 57, 57);
+    margin-bottom: 0;
+}
+
+.dates-and-doughnut p:last-of-type{
+    /* border: 2px solid blue; */
+    width: 60vw;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: rgb(129, 129, 129);
+    margin-top: 0;
+}
+
+#back-to-summaries {
+    background-color: transparent;
+    border: none;
+    color: rgb(57, 57, 57);
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 1%;
+    margin: 2%;
+}
+
+.all-items-summary-div {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    width: 40vw;
+    margin-bottom: 3%;
+    border-radius: 25px;
+    padding: 2%;
+}
+
+.all-items-summary-div h2 {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+    width: 80%;
+}
+
+.each-need-want {
+    border-bottom: 1px solid rgb(217, 217, 217);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}

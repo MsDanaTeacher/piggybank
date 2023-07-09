@@ -71,6 +71,7 @@ export default function Summary({ user }) {
         data: [wantsTotal, needsTotal, savedTotal < 0 ? null : savedTotal],
         backgroundColor: ["#2A9D8F", "#F4A261", "#E9C46A"],
         hoverBackgroundColor: ["#7BCDC3", "#F3C8A7", "#EAD196"],
+        borderColor: "transparent",
       },
     ],
   };

@@ -12,6 +12,7 @@ export default function SummaryDetails() {
 
   const { id } = useParams();
   const navigate = useNavigate();
+  const date = summary.date;
 
   const spending = [
     "To make your budget go further, it's a good idea to be mindful of your spending on things you want and things you need. Try saving more by setting a goal and saving a little each week. It can help you reach your savings target in no time!",
@@ -34,21 +35,26 @@ export default function SummaryDetails() {
     "You're doing incredible with your money skills! By smartly spending on the things you really want, taking care of your needs, and saving up for special things, you're on your way to achieving big dreams. Keep it up, and remember that every little step gets you closer to your goals!",
   ];
 
-  const randomIndex = Math.floor(Math.random() * 3)
+  const randomIndex = Math.floor(Math.random() * 3);
 
   let response;
-  if(summary.want_total >= summary.budget * 0.35){
-    response = spendingWants[randomIndex]
-  } else if(summary.need_total + summary.want_total >= summary.budget * 0.9){
-    response = spending[randomIndex]
-  } else if(summary.saved >= summary.budget * 0.2){
-    response = saving[randomIndex]
-  } else if(summary.want_total < summary.budget * 0.35 && summary.need_total <= summary.budget * 0.55 && summary.saved >= summary.budget * 0.2){
-    response = success[randomIndex]
-  } else if(summary.saved < 0){
-    response = "Oops! We went over budget this week. Let\s set some savings goals for next week to get back on track!"
+  if (summary.want_total >= summary.budget * 0.35) {
+    response = spendingWants[randomIndex];
+  } else if (summary.need_total + summary.want_total >= summary.budget * 0.9) {
+    response = spending[randomIndex];
+  } else if (summary.saved >= summary.budget * 0.2) {
+    response = saving[randomIndex];
+  } else if (
+    summary.want_total < summary.budget * 0.35 &&
+    summary.need_total <= summary.budget * 0.55 &&
+    summary.saved >= summary.budget * 0.2
+  ) {
+    response = success[randomIndex];
+  } else if (summary.saved < 0) {
+    response =
+      "Oops! We went over budget this week. Lets set some savings goals for next week to get back on track!";
   } else {
-    response = "Keep up the good work!"
+    response = "Keep up the good work!";
   }
 
   useEffect(() => {
@@ -66,12 +72,20 @@ export default function SummaryDetails() {
       });
   }, []);
 
-  const allItems = items.map((i) => (
-    <div key={i.id} style={{ border: "2px solid red", width: "50vw" }}>
-      <p>{i.item}</p>
-      <p>{i.cost}</p>
+  const allNeeds = items.map((i) => {
+    if(i.need === true){
+    return <div key={i.id} className="each-need-want">
+      <p>{i.item} ${i.cost}</p>
+    </div>}}
+  );
+  
+  const allWants = items.map((i) => {
+    if(i.need === false){
+      return <div key={i.id} className="each-need-want">
+      <p>{i.item} ${i.cost}</p>
     </div>
-  ));
+    }
+  })
   function handleBackToSummaries() {
     navigate("/home");
   }
@@ -100,6 +114,7 @@ export default function SummaryDetails() {
         ],
         backgroundColor: ["#2A9D8F", "#F4A261", "#E9C46A"],
         hoverBackgroundColor: ["#7BCDC3", "#F3C8A7", "#EAD196"],
+        borderColor: "transparent",
       },
     ],
   };
@@ -114,21 +129,26 @@ export default function SummaryDetails() {
 
   return (
     <>
-      <button onClick={handleBackToSummaries}>back to summaries</button>
-      <h2>Spending Receipt</h2>
-      <div style={{ display: "flex" }}>
-        <div style={{ maxWidth: "50%", width: "auto" }}>
+    <div className="summary-details-page">
+      <button onClick={handleBackToSummaries} id="back-to-summaries">back to summaries</button>
+      <div className="dates-and-doughnut">
+        <h2>Spending Summary: {date}</h2>
+        <div style={{ maxWidth: "30%", height: "auto" }}>
           <Doughnut data={data} options={options} />
         </div>
-        <div>
-          {allItems}
-          <p>
-            I had ${summary.budget} to spend. {needsSummary}. {wantsSummary}.{" "}
-            {savedSummary}
-          </p>
-          <h2>Tips for Success:</h2>
-          <p>{response}</p>
-        </div>
+        <p>
+          I had ${summary.budget} to spend. {needsSummary}. {wantsSummary}.{" "}
+          {savedSummary}
+        </p>
+        <p>{response}</p>
+      </div>
+
+      <div className="all-items-summary-div">
+        <h2>🧸 Needs</h2>
+        {allNeeds}
+        <h2>🍎 Wants</h2>
+        {allWants}
+      </div>
       </div>
     </>
   );
