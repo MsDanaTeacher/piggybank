@@ -144,9 +144,9 @@ export default function SummaryDetails() {
       </div>
 
       <div className="all-items-summary-div">
-        <h2>🧸 Needs</h2>
+        <h2>🍎 Needs</h2>
         {allNeeds}
-        <h2>🍎 Wants</h2>
+        <h2>🧸 Wants</h2>
         {allWants}
       </div>
       </div>
