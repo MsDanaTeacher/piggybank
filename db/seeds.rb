@@ -1,6 +1,6 @@
-# User.destroy_all
-# WeeklySpending.destroy_all
-# Item.destroy_all
+User.destroy_all
+WeeklySpending.destroy_all
+Item.destroy_all
 
 
 # puts "all users destroyed"
