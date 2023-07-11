@@ -3,18 +3,18 @@ WeeklySpending.destroy_all
 Item.destroy_all
 
 
-# puts "all users destroyed"
+puts "all users destroyed"
 
 
-# puts "seeding users..."
+puts "seeding users..."
 
 
-# user1 = User.create!(username: "dana", password_digest: "abc", icon: "https://cdn-icons-png.flaticon.com/512/3940/3940407.png")
-# user2 = User.create!(username: "sam", password_digest: "abcya", icon: "https://cdn-icons-png.flaticon.com/512/3940/3940446.png")
-# user3 = User.create!(username: "bali", password_digest: "boosta", icon: "https://cdn-icons-png.flaticon.com/128/3940/3940422.png")
+user1 = User.create!(username: "dana", password_digest: "abc", icon: "https://cdn-icons-png.flaticon.com/512/3940/3940407.png")
+user2 = User.create!(username: "sam", password_digest: "abcya", icon: "https://cdn-icons-png.flaticon.com/512/3940/3940446.png")
+user3 = User.create!(username: "bali", password_digest: "boosta", icon: "https://cdn-icons-png.flaticon.com/128/3940/3940422.png")
 
 
-# puts "users seeded"
+puts "users seeded"
 
 
 # puts "seeding weekly spending..."
