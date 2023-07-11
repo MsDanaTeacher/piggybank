@@ -102,7 +102,7 @@ export default function Summary({ user }) {
               <p>💵 All Time Savings: ${savedTotal}</p>
             </div>
           </div>
-          <div style={{ width: "50%" }}>
+          <div style={{ width: '50%', aspectRatio: '1', margin: 'auto' }}>
             <Doughnut data={data} options={options} />
           </div>
         </div>

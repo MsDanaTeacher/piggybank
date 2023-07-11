@@ -133,7 +133,7 @@ export default function SummaryDetails() {
       <button onClick={handleBackToSummaries} id="back-to-summaries">back to summaries</button>
       <div className="dates-and-doughnut">
         <h2>Spending Summary: {date}</h2>
-        <div style={{ maxWidth: "30%", height: "auto" }}>
+        <div style={{ width: '30%', aspectRatio: '1', margin: 'auto' }}>
           <Doughnut data={data} options={options} />
         </div>
         <p>
