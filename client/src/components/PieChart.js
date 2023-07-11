@@ -23,13 +23,25 @@ export default function PieChart({ wantsTotal, needsTotal, savedTotal }) {
             enabled: true,
           },
         },
+        layout: {
+          padding: {
+            left: 20,
+            right: 20,
+            top: 20,
+            bottom: 20,
+          },
+          responsive: true,
+          maintainAspectRatio: false,
+        },
       };
     
   return (
     <>
-            <h2>My Weekly Spending Chart</h2>
-            <div style={{maxWidth: "50%", width: "auto"}}>
+    <div className='spending-tracker-pie-chart-div'>
+            <p id="weekly-spending-chart">My Weekly Spending Chart</p>
+            <div style={{ width: '80%', aspectRatio: '1', margin: 'auto' }}>
             <Doughnut data={data} options={options} />
+            </div>
             </div>
     </>
   )

@@ -1,0 +1,97 @@
+@import "fonts.css";
+
+#tracker-back-button {
+    background-color: white;
+    border: none;
+    color: rgb(57, 57, 57);
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 1% 2%;
+    margin: 1%;
+}
+
+.spending-tracker-page{
+    background-color:#f1f1f1;
+    min-height: 100vh;
+    overflow: scroll;
+    width: 100vw;
+    /* border: 2px solid red; */
+    padding-bottom: 20px;
+}
+
+.spending-tracker-page h1{
+    text-align: center;
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(57, 57, 57);
+}
+
+.spending-tracker-flex-div {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.spending-tracker-titles {
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(57, 57, 57);
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 0;
+}
+#weekly-spending-chart {
+    font-family: "Ubuntu", sans-serif;
+    color: rgb(57, 57, 57);
+    font-weight: 500;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.spending-form-div {
+    background-color: white;
+    opacity: .9;
+    border-radius: 20px;
+    padding: 2% 4%;
+    height: 50vh;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(57,57,57);
+}
+
+.spending-tracker-pie-chart-div {
+    background-color: white;
+    opacity: .9;
+    border-radius: 20px;
+    padding: 2% 4%;
+    width: auto;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(57,57,57);
+    text-align: center;
+    height: 55vh;
+}
+.spending-form-div input, select{
+   border: none;
+   border-bottom: 2px solid grey;
+   margin-bottom: 5%;
+   outline: none;
+}
+
+#spending-submit {
+    background-color: white;
+    border: none;
+    color: rgb(57, 57, 57);
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    padding: 2% 3%;
+    margin: 1%;
+}
+
+.all-items-div {
+    border: 2px solid red;
+    width: 70vw;
+    margin: auto;
+    margin-top: 2%;
+}

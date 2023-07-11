@@ -127,9 +127,9 @@ export default function SpendingTracker({ user }) {
   }, [wantsTotal, needsTotal, savedTotal])
 
   let allItems = items.map((el) => (
-    <div key={el.id} style={{border: "2px solid black"}}>
+    <div key={el.id}>
     <h5>{el.item}</h5>
-    <p>{el.cost}</p>
+    <p>${el.cost}</p>
     <p>{el.need === true ? "need" : "want"}</p>
     </div>
   ))
@@ -138,29 +138,31 @@ export default function SpendingTracker({ user }) {
 
   return (
     <>
-    <button onClick={handleBackClick}>back</button>
-      <h1 style={{color: `${color}`}}>Budget: ${budget}</h1>
-      <h1>Dates: {date}</h1>
+    <div class="spending-tracker-page">
+    <button onClick={handleBackClick} id="tracker-back-button">back</button>
+
+    <h1>{date}</h1>
+    <div className="spending-tracker-flex-div">
+    <div className="spending-form-div">
+      <p style={{color: `${color}`}} className="spending-tracker-titles">Budget: ${budget}</p>
       <form onSubmit={(e) => handleSpendingSubmit(e)}>
-        <label>Item Name:</label>
+        <label>Item Name:</label><br/>
         <input
           type="text"
           name="item"
           value={formData.item}
           onChange={(e) => handleSpendingChange(e)}
           required
-        />
-        <label>Cost:</label>
-        <p>
-          $
+        /><br/>
+        <label>Cost:
+          </label><br/>$
           <input
             type="number"
             name="cost"
             value={formData.cost}
             onChange={(e) => handleSpendingChange(e)}
             required
-          />
-        </p>
+          /><br />
         <label>Need or Want?</label>
         <select
           name="need"
@@ -171,16 +173,21 @@ export default function SpendingTracker({ user }) {
           <option value="">Select:</option>
           <option value="true">Need</option>
           <option value="false">Want</option>
-        </select>
-        <button type="submit">Submit</button>
+        </select><br/>
+        <button type="submit" id="spending-submit">Submit</button>
       </form>
       <p>Wants Total: ${wantsTotal}</p>
       <p>Needs Total: ${needsTotal}</p>
-      <p style={{color: `${color}`}}>Saved: ${savedTotal}</p>
-      <div>
-        {allItems}
+      <p style={{color: `${color}`, marginBottom: "0"}}>Saved: ${savedTotal}</p>
       </div>
+      <div>
       <PieChart wantsTotal={wantsTotal} needsTotal={needsTotal} savedTotal={savedTotal} id={id}/>
+      </div>
+      </div>
+      <div className="all-items-div">
+      {allItems}
+      </div>
+      </div>
     </>
   );
 }
