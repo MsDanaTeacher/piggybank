@@ -89,9 +89,31 @@
     margin: 1%;
 }
 
-.all-items-div {
-    border: 2px solid red;
-    width: 70vw;
+.table-container {
+    width: 70vw; /* Adjust the width of the container */
+    overflow-x: auto;
+    background-color: white;
     margin: auto;
-    margin-top: 2%;
+    border-radius: 20px;
+    margin-top: 5%;
+}
+
+table {
+    width: 60vw;
+    table-layout: fixed; /* Set table layout to fixed */
+    border-collapse: collapse; /* Merge cell borders */
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #C9A7EB;
+    border-radius: 20px;
+  }
+
+  th, td {
+    text-align: center; /* Center align the table cells */
+    padding: 15px;
+    color: white;
+  }
+td {
+    color: black;
 }

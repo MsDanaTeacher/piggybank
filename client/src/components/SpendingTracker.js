@@ -127,11 +127,12 @@ export default function SpendingTracker({ user }) {
   }, [wantsTotal, needsTotal, savedTotal])
 
   let allItems = items.map((el) => (
-    <div key={el.id}>
-    <h5>{el.item}</h5>
-    <p>${el.cost}</p>
-    <p>{el.need === true ? "need" : "want"}</p>
-    </div>
+    <tr key={el.id} style={{borderBottom: "1px solid white"}}>
+    <td>{el.item}</td>
+    <td>${el.cost}</td>
+    <td>{el.need === false ? "✅" : null}</td>
+    <td>{el.need === true ? "✅" : null}</td>
+    </tr>
   ))
   let color; 
   savedTotal < 0 ? color = "red" : color = "black"
@@ -184,8 +185,20 @@ export default function SpendingTracker({ user }) {
       <PieChart wantsTotal={wantsTotal} needsTotal={needsTotal} savedTotal={savedTotal} id={id}/>
       </div>
       </div>
-      <div className="all-items-div">
+      <div className="table-container">
+        <table>
+          <thead>
+          <tr>
+            <th>Item</th>
+            <th>Cost</th>
+            <th>Want</th>
+            <th>Need</th>
+          </tr>
+          </thead>
+          <tbody>
       {allItems}
+      </tbody>
+      </table>
       </div>
       </div>
     </>
