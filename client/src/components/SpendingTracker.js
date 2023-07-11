@@ -148,6 +148,7 @@ export default function SpendingTracker({ user }) {
           name="item"
           value={formData.item}
           onChange={(e) => handleSpendingChange(e)}
+          required
         />
         <label>Cost:</label>
         <p>
@@ -157,6 +158,7 @@ export default function SpendingTracker({ user }) {
             name="cost"
             value={formData.cost}
             onChange={(e) => handleSpendingChange(e)}
+            required
           />
         </p>
         <label>Need or Want?</label>
@@ -164,6 +166,7 @@ export default function SpendingTracker({ user }) {
           name="need"
           value={formData.need}
           onChange={(e) => handleSpendingChange(e)}
+          required
         >
           <option value="">Select:</option>
           <option value="true">Need</option>

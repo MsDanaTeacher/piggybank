@@ -92,18 +92,19 @@ const navigate = useNavigate()
     >
       {/* <label>Budget:</label> */}
       <div><label>Budget: </label>
-        $ <input type="number" name="budget" value={formData.budget} id="budget"/>
+        $ <input type="number" name="budget" value={formData.budget} id="budget" required/>
       </div>
       {/* <label>Dates</label> */}
       <div style={{marginTop: "2%", marginBottom: "4%"}}>From:<DatePicker
         selected={dateRange[0]}
         onChange={(date) => handleDateChange(date, 0)}
-        
+        required
       /></div>
       <div>To: 
       <DatePicker
         selected={dateRange[1]}
         onChange={(date) => handleDateChange(date, 1)}
+        required
       />
       </div>
       <button type="submit" id="budget-submit">Submit</button>
