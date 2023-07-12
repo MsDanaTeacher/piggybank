@@ -194,14 +194,19 @@ a:hover {
 }
 
 @media screen and (max-width: 480px){
+
   .landing-page-main-div {
-  height: 70vh;
+  height: 100vh;
   background-color: #fdd7dc;
   background-image: none;
   }
+  .landing-page-main-div nav{
+    padding-top: 15%;
+    }
   .landing-page-main-div div div {
     font-size: 20px;
     width: 100vw;
+    margin-top: 26%;
   }
   .landing-w-parent-div {
     margin-top: 2em;

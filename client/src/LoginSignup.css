@@ -88,3 +88,31 @@ font-family: "Ubuntu", sans-serif;
 .form-login-button:hover {
     color: rgb(255, 155, 155);
 }
+
+
+@media screen and (max-width: 480px){
+    .form-div {
+    background-color: white;
+    opacity: .8;
+    width: 80vw;
+    height: 60vh;
+    border-radius: 25px;
+    -webkit-box-shadow: 16px 44px 35px -22px rgba(0,0,0,0.26);
+-moz-box-shadow: 16px 44px 35px -22px rgba(0,0,0,0.26);
+box-shadow: 16px 44px 35px -22px rgba(0, 0, 0, 0.15);
+margin: auto;
+margin-top: 8%;
+/* border: 2px solid red; */
+padding-top: 2%;
+}
+.form-div form input {
+    color: white;
+}
+.form-div p {
+    padding-top: 5%;
+}
+.form-div h2 {
+    margin-top: 0;
+    padding-top: 20%;
+}
+}
