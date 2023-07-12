@@ -117,3 +117,23 @@ table {
 td {
     color: black;
 }
+
+@media screen and (max-width: 480px){
+    .spending-tracker-flex-div {
+        flex-wrap: wrap;
+    }
+    .spending-form-div{
+        margin-bottom: 5%;
+    }
+    .spending-tracker-pie-chart-div {
+        padding: 0;
+        width: 90vw;
+        padding-top: 10%;
+    }
+    .table-container {
+        width: 90vw; /* Adjust the width of the container */
+    }
+    table {
+        width: 80vw;
+      }
+}
