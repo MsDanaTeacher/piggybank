@@ -84,7 +84,7 @@ const navigate = useNavigate()
     }
   }
   return (
-    // <div className="homepage-form-div">
+    <div className="homepage-form-div">
     <form
       onChange={(e) => handleBudgetChange(e)}
       onSubmit={(e) => handleFormSubmit(e)}
@@ -109,6 +109,6 @@ const navigate = useNavigate()
       </div>
       <button type="submit" id="budget-submit">Submit</button>
     </form>
-    // </div>
+   </div>
   );
 }

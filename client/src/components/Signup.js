@@ -53,7 +53,7 @@ export default function Signup({setUser}) {
         <div class="form-div">
         <p>Have an account? <br/><button onClick={handleLogInClick} class="form-signup-button">Log in!</button></p><br />
         <h2>Sign up</h2>
-      <form onChange={(e) => handleSignUpChange(e)} onSubmit={(e) => handleSignUpSubmit(e)}>
+      <form onChange={(e) => handleSignUpChange(e)} onSubmit={(e) => handleSignUpSubmit(e)} class="signup-form">
         <label>Username:</label>
         <input type="text" name="username" value={signup.username} />
         <label>Password:</label>

@@ -107,6 +107,7 @@ padding-top: 2%;
 }
 .form-div form input {
     color: white;
+    padding: 5% 5%;
 }
 .form-div p {
     padding-top: 5%;
@@ -114,5 +115,8 @@ padding-top: 2%;
 .form-div h2 {
     margin-top: 0;
     padding-top: 20%;
+}
+.signup-form button {
+    margin-top: 9%;
 }
 }

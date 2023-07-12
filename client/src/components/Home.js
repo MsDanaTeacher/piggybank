@@ -30,7 +30,7 @@ export default function Home({ user, setUser }) {
       </h1>
     </div>
     {/* <button onClick={handleSummaryClick}>Look at previous spendings!</button> */}
-    <div></div>
+    {/* <div></div> */}
     <div class="form-summary-components">
     <div className='summary-component'>
     <Summary user={user}/>

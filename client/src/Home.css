@@ -30,7 +30,6 @@
     background-color: white;
     width: 20vw;
     border-radius: 25px;
-    height: auto;
 }
 
 .form-summary-components {
@@ -172,3 +171,62 @@
     padding: 2% 4%;
 }
 
+@media screen and (max-width: 480px){
+    #log-out-button {
+        margin-bottom: 0em;
+        background-color: white;
+    }
+    .user-home div h1{
+        margin: 8% 0%;
+        color: #f8b3bc;
+        text-align: center;
+    }
+    .form-summary-components {
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid blue;
+    }
+    /* .homepage-form-div {
+        margin-top: 15%;
+        border: 2px solid red;
+    } */
+    .user-home-form {
+        margin-top: 3%;
+        margin: auto;
+    }
+    .summary-component {
+        margin: 0;
+        background-color: transparent;
+    }
+    .user-homepage-container {
+        width: 80vw;
+        background-color: white;
+        padding: 10%;
+        border-radius: 20px;
+        margin-left: 17px;
+    }
+    .all-spendings-div {
+        /* border: 2px solid red; */
+        padding: 10%;
+        margin-top: 25em;
+        margin-left: 17px;
+    }
+    /* .user-home-form {
+        background-color: white;
+        width: 20vw;
+        border-radius: 25px;
+        height: auto;
+        margin-bottom: 5%;
+    } */
+    .user-home-form {
+        background-color: white;
+        width: 40vw;
+        border-radius: 25px;
+        margin-top: 11px;
+    }
+    .user-home-form {
+        height: 50vh;
+        width: 60vw;
+    }
+}
