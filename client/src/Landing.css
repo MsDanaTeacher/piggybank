@@ -227,12 +227,15 @@ a:hover {
 }
 .landing-page-who-where-when-div img {
   margin-top: 10%;
+  width: 80vw;
+  height: auto;
 }
 .landing-signup-div {
   margin-top: 1em;
 }
+
 .landing-signup-div img {
-  width: 90vw;
+  width: 80vw;
   height: 40vh;
   left: 0%;
   transform: none;
@@ -247,7 +250,14 @@ a:hover {
 .landing-signup-div {
   margin-bottom: 1em;
 }
+.landing-signup-div button {
+  width: 130px;
+  margin-top: 2%;
+}
 footer {
   text-align: center;
+}
+footer p {
+  width: 80vw;
 }
 }
