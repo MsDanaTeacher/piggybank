@@ -202,10 +202,52 @@ a:hover {
   .landing-page-main-div div div {
     font-size: 20px;
     width: 100vw;
-    padding-left: 1.2em;
   }
-  .landing-page-main-div div div button {
-    width: 68vw;
-    padding-right: 9em;
-  }
+  .landing-w-parent-div {
+    margin-top: 2em;
+}
+.landing-page-who-where-when-div {
+  flex-wrap: wrap;
+}
+.landing-page-who-where-when-div div {
+  text-align: center;
+}
+.landing-page-who-where-when-div div p{
+  width: 90%;
+  max-width: 100%;
+  margin: auto;
+}
+.squiggle-div {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  opacity: .5;
+}
+.landing-page-who-where-when-div img {
+  margin-top: 10%;
+}
+.landing-signup-div {
+  margin-top: 1em;
+}
+.landing-signup-div img {
+  width: 90vw;
+  height: 40vh;
+  left: 0%;
+  transform: none;
+}
+.landing-signup-div h2 {
+  left: 0%;
+  transform: none;
+  z-index: 1;
+  margin: 22% 10%;
+  width: 80%;
+}
+.landing-signup-div {
+  margin-bottom: 1em;
+}
+footer {
+  text-align: center;
+}
 }
